@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Keurig" customModuleProvider="target">
+            <connections>
+                <outlet property="justinLabel" destination="GXu-OO-9nQ" id="tlg-rx-po6"/>
+                <outlet property="pathTextField" destination="dlX-av-ghz" id="m1V-pv-jTc"/>
+                <outlet property="royalAppsLabel" destination="J9T-NQ-B9T" id="eOp-H2-pRh"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+            <items>
+                <menuItem title="Keurig" id="1Xt-HY-uBw">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Keurig" systemMenu="apple" id="uQy-DD-JDr">
+                        <items>
+                            <menuItem title="Hide Keurig" keyEquivalent="h" id="Olw-nP-bQN">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="VT4-aY-XCT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="Kd2-mp-pUS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="Dhg-Le-xox"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                            <menuItem title="Quit Keurig" keyEquivalent="q" id="4sb-4s-VLi">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Project" id="dMs-cI-mzQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Project" id="bib-Uj-vzu">
+                        <items>
+                            <menuItem title="Build" keyEquivalent="b" id="Was-JA-tGl">
+                                <connections>
+                                    <action selector="buildButtonClickedWithSender:" target="-1" id="ezC-Oy-d8L"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Build &amp; Run" keyEquivalent="r" id="IAo-SY-fd9">
+                                <connections>
+                                    <action selector="buildAndRunButtonClickedWithSender:" target="-1" id="NBp-7X-Idd"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="Keurig" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="587" height="139"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <value key="minSize" type="size" width="587" height="139"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="587" height="139"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <stackView distribution="fill" orientation="vertical" alignment="trailing" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jz1-Ij-Hml">
+                        <rect key="frame" x="16" y="40" width="555" height="59"/>
+                        <subviews>
+                            <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65q-BK-uGK">
+                                <rect key="frame" x="0.0" y="37" width="555" height="22"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-av-ghz">
+                                        <rect key="frame" x="0.0" y="0.0" width="440" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="440" id="qmG-OS-zup"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Drag .java file here" drawsBackground="YES" id="WwL-wN-f9u">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QLJ-v4-IDe">
+                                        <rect key="frame" x="450" y="-6" width="111" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="99" id="4FI-rw-aDb"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Select File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1HE-tc-VNW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="chooseFileWithSender:" target="Voe-Tx-rLC" id="Vj1-eB-HJX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-cG-fhu">
+                                <rect key="frame" x="341" y="0.0" width="214" height="21"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-Zv-bTn">
+                                        <rect key="frame" x="-6" y="-7" width="111" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="99" id="ZGR-UK-onh"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Build" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O8U-3b-VEh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="buildButtonClickedWithSender:" target="Voe-Tx-rLC" id="c8i-WJ-9gT"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-Er-bpU">
+                                        <rect key="frame" x="109" y="-7" width="111" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="99" id="9uQ-Ar-3na"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Build &amp; Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Si1-gX-3qX">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="buildAndRunButtonClickedWithSender:" target="Voe-Tx-rLC" id="d9j-Mf-uxx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="555" id="9NR-bz-KMz"/>
+                            <constraint firstAttribute="height" constant="59" id="guw-xv-J92"/>
+                        </constraints>
+                        <visibilityPriorities>
+                            <integer value="1000"/>
+                            <integer value="1000"/>
+                        </visibilityPriorities>
+                        <customSpacing>
+                            <real value="3.4028234663852886e+38"/>
+                            <real value="3.4028234663852886e+38"/>
+                        </customSpacing>
+                    </stackView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J9T-NQ-B9T">
+                        <rect key="frame" x="6" y="8" width="183" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright © 2019 Royal Apps" id="C41-f7-nA6">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GXu-OO-9nQ">
+                        <rect key="frame" x="480" y="8" width="101" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="by Justin Proulx" id="GjD-Qc-7zw">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Jz1-Ij-Hml" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="1eA-dD-c6x"/>
+                    <constraint firstAttribute="bottom" secondItem="GXu-OO-9nQ" secondAttribute="bottom" constant="8" id="7ro-23-aqr"/>
+                    <constraint firstAttribute="bottom" secondItem="J9T-NQ-B9T" secondAttribute="bottom" constant="8" id="GKg-dI-rLM"/>
+                    <constraint firstItem="J9T-NQ-B9T" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="8" id="JLR-DP-fzD"/>
+                    <constraint firstAttribute="trailing" secondItem="GXu-OO-9nQ" secondAttribute="trailing" constant="8" id="LzD-zU-PqK"/>
+                    <constraint firstItem="Jz1-Ij-Hml" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="jL4-ae-LYM"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="149.5" y="-230.5"/>
+        </window>
+    </objects>
+</document>
