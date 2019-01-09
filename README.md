@@ -3,7 +3,7 @@ Keurig makes Java (programs from source)
 
 # Download
 
-Download [.zip here](https://github.com/Sn0wCh1ld/Keurig/releases/download/1.0/Keurig.app.zip)
+Download [.zip here](https://github.com/Sn0wCh1ld/Keurig/releases/download/1.0/Keurig.app.zip). There's a .app inside.
 
 # Requirements
 Must have Java and JDK installed. Make sure both are up to date.
