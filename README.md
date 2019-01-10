@@ -3,7 +3,7 @@ Keurig makes Java (programs from source)
 
 # Download
 
-Download [.zip here](https://github.com/Sn0wCh1ld/Keurig/releases/download/1.0/Keurig.app.zip). There's a .app inside, just put it in your Applications folder.
+Download [.zip here](https://github.com/Sn0wCh1ld/Keurig/releases/download/1.0.1/Keurig.app.zip). There's a .app inside, just put it in your Applications folder.
 
 macOS only.
 
