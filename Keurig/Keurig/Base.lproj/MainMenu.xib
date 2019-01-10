@@ -63,9 +63,47 @@
                                     <action selector="buildButtonClickedWithSender:" target="-1" id="ezC-Oy-d8L"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Build &amp; Run" keyEquivalent="r" id="IAo-SY-fd9">
+                            <menuItem title="Run" keyEquivalent="r" id="8XE-dd-PUN">
+                                <connections>
+                                    <action selector="runButtonClickedWithSender:" target="-1" id="Wue-pD-mGk"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Build &amp; Run" keyEquivalent="R" id="IAo-SY-fd9">
                                 <connections>
                                     <action selector="buildAndRunButtonClickedWithSender:" target="-1" id="NBp-7X-Idd"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="vIg-L7-X7D">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="lbA-Aw-dh8">
+                        <items>
+                            <menuItem title="Copy" keyEquivalent="c" id="LDy-xa-ysD">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="kXd-dx-RtG"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="cw1-iY-qWx">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="WXL-3B-nhT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="SuF-Ij-ahZ">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="9za-MQ-D2T"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="kcU-pL-9bc">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="f0X-fB-XjU"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="kDw-Q2-ebt"/>
+                            <menuItem title="Undo" keyEquivalent="z" id="Rgr-e9-ZYa">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="kuH-IS-Vkd"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -124,7 +162,7 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-cG-fhu">
-                                <rect key="frame" x="341" y="0.0" width="214" height="21"/>
+                                <rect key="frame" x="226" y="0.0" width="329" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-Zv-bTn">
                                         <rect key="frame" x="-6" y="-7" width="111" height="32"/>
@@ -139,12 +177,25 @@
                                             <action selector="buildButtonClickedWithSender:" target="Voe-Tx-rLC" id="c8i-WJ-9gT"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-Er-bpU">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yNV-n3-SfN">
                                         <rect key="frame" x="109" y="-7" width="111" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="99" id="Zsk-R7-q50"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IUS-cm-Yud">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="runButtonClickedWithSender:" target="Voe-Tx-rLC" id="gsy-4x-L9Z"/>
+                                        </connections>
+                                    </button>
+                                    <button focusRingType="exterior" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tGN-Er-bpU">
+                                        <rect key="frame" x="224" y="-7" width="111" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="99" id="9uQ-Ar-3na"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="push" title="Build &amp; Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Si1-gX-3qX">
+                                        <buttonCell key="cell" type="push" title="Build &amp; Run" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="exterior" imageScaling="proportionallyDown" inset="2" id="Si1-gX-3qX">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -156,8 +207,10 @@
                                 <visibilityPriorities>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>

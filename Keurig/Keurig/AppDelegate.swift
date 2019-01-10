@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
         
         pathTextField.stringValue = UserDefaults.standard.string(forKey: "workingDirectory") ?? ""
         
+        // enter key to do action
+        //pathTextField.target = self
+        //pathTextField.action = #selector(objcBuildAndRun)
+        
         setUpPromoLabelActions(label: justinLabel, selector: #selector(justinTwitter))
         setUpPromoLabelActions(label: royalAppsLabel, selector: #selector(royalAppsWebsite))
     }
@@ -89,6 +93,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
         return runResult.2
     }
     
+    func buildAndRun()
+    {
+        savePath()
+        if build()
+        {
+            let _ = run()
+        }
+    }
+    
+    @objc func objcBuildAndRun()
+    {
+        buildAndRun()
+    }
+    
     //MARK:– IBActions
     @IBAction func buildButtonClicked(sender: NSButton)
     {
@@ -96,13 +114,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTextFieldDelegate {
         let _ = build()
     }
     
-    @IBAction func buildAndRunButtonClicked(sender: NSButton)
+    @IBAction func buildAndRunButtonClicked(sender: NSObject)
     {
-        savePath()
-        if build()
-        {
-            let _ = run()
-        }
+        buildAndRun()
+    }
+    
+    @IBAction func runButtonClicked(sender: NSButton)
+    {
+        let _ = run()
     }
     
     @IBAction func chooseFile(sender: NSButton)

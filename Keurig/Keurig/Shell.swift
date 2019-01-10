@@ -10,11 +10,16 @@ import Foundation
 
 class Shell
 {
-    func run(launchPath: String, arguments: [String] = []) -> (output: String?, error: String?)
+    func run(launchPath: String, arguments: [String] = [], activeDirectoryPath: URL?) -> (output: String?, error: String?)
     {
         let task = Process()
         task.launchPath = launchPath
         task.arguments = arguments
+        
+        if (activeDirectoryPath != nil)
+        {
+            task.currentDirectoryURL = activeDirectoryPath!
+        }
         
         let pipe = Pipe()
         task.standardOutput = pipe

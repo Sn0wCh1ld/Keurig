@@ -20,10 +20,7 @@ class BuildRun
         // get java compiler path
         let javacPath = getToolLocation("javac")
         
-        // move to correct directory
-        let _ = shell.run(launchPath: "/usr/bin/cd", arguments: [dirpath])
-        
-        let error: String = shell.run(launchPath: javacPath, arguments: [filepath]).error ?? ""
+        let error: String = shell.run(launchPath: javacPath, arguments: [filepath], activeDirectoryPath: nil).error ?? ""
         if error.count > 0
         {
             return ("Failed to Build", error, false)
@@ -38,19 +35,20 @@ class BuildRun
     {
         let shell = Shell.init()
         let dirpathURL = URL(fileURLWithPath: filepath)
-        let dirpath = dirpathURL.deletingLastPathComponent().relativePath
+        let classname = dirpathURL.deletingPathExtension().lastPathComponent
+        //let classpath = dirpath + "/" + classname
         
         let javaPath = getToolLocation("java")
         
         // move to correct directory
-        let _ = shell.run(launchPath: "/usr/bin/cd", arguments: [dirpath])
+        //let _ = shell.run(launchPath: "/usr/bin/cd", arguments: [dirpath])
         
-        let returnedValues = shell.run(launchPath: javaPath, arguments: [filepath])
+        let returnedValues = shell.run(launchPath: javaPath, arguments: [classname], activeDirectoryPath: dirpathURL.deletingLastPathComponent())
         let error = returnedValues.error ?? ""
         let output = returnedValues.output ?? ""
         if error.count > 0
         {
-            return ("Runtime Error", error, false)
+            return ("Error", error, false)
         }
         else
         {
@@ -61,6 +59,6 @@ class BuildRun
     func getToolLocation(_ tool: String) -> String
     {
         let shell = Shell.init()
-        return shell.run(launchPath: "/usr/bin/which", arguments: [tool]).output?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ("/usr/bin/" + tool)
+        return shell.run(launchPath: "/usr/bin/which", arguments: [tool], activeDirectoryPath: nil).output?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ("/usr/bin/" + tool)
     }
 }
